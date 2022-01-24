@@ -16,7 +16,15 @@ io.sockets.on('connection', function(socket){
     connections.push(socket);
     console.log('Connecter %s sockets connected', connections.length);
 
-    // déconnexion
-    connections.splice(connections.indexOf(socket), 1);
-    console.log('Déconnecter %s sockets connected', connections.length);
+    // Déconnexion
+    socket.on('disconnect', function(data){
+        connections.splice(connections.indexOf(socket), 1);
+        console.log('Déconnecter %s sockets connected', connections.length);
+    });
+
+    // Envoyer des message
+    socket.on('send message', function(data){
+        console.log(data);
+        io.sockets.emit('new message', {msg: data});
+    });
 });
