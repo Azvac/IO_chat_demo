@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            Tuto Socket.io chat
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <style>
+            body {
+                margin-top:30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="well">
+                        <h3>Utilisateur en lignes</h3>
+                        <ul class="list-group"></ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="chat" id="chat"></div>
+
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label>Entrer un message</label>
+                            <textarea class="form-control" id="message"></textarea>
+                            <br />
+                            <input type="submit" class="btn-primary" value="Envoyer le message" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
